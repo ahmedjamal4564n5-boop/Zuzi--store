@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F8BFCF;
+  --color-secondary: #F5E6DA;
+  --color-accent: #D4AF37;
+  --color-charcoal: #2B2B2B;
+  --color-gold-light: #F9F3E3;
+  --color-rose-light: #FFF0F3;
+  --color-beige-light: #FAF5F0;
+
+  --font-serif: "Playfair Display", "Didot", "Georgia", serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", "Helvetica Neue", sans-serif;
+
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-float-medium: float-medium 6s ease-in-out infinite;
+  --animate-float-fast: float-fast 4s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 20s linear infinite;
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-shimmer: shimmer 2.5s infinite linear;
+  --animate-pulse-subtle: pulse-subtle 3s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+}
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.015); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #F8BFCF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Custom Utilities for Luxury Glassmorphism and Effects */
+.luxury-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.05);
+}
+
+.luxury-glass-dark {
+  background: rgba(43, 43, 43, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gold-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #A8862C 0%, #D4AF37 50%, #F3E5AB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silk-gradient {
+  background: linear-gradient(135deg, #FFF0F3 0%, #FAF5F0 50%, #F5E6DA 100%);
+}
+
+.glow-hover {
+  transition: all 0.3s ease;
+}
+.glow-hover:hover {
+  box-shadow: 0 10px 30px rgba(248, 191, 207, 0.4);
+  transform: translateY(-2px);
+}
